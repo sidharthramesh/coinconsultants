@@ -1034,10 +1034,11 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #clients img {
-  max-width: 100%;
+  max-width: 90%;
   opacity: 0.5;
   transition: 0.3s;
   padding: 15px 0;
+  margin: 10px;
 }
 
 #clients img:hover {
@@ -1056,6 +1057,11 @@ body.mobile-nav-active #mobile-nav-toggle {
   height: 12px;
   border-radius: 50%;
   background-color: #ddd;
+}
+
+.owl-carousel .owl-stage {
+  display: flex;
+  align-items: center;
 }
 
 #clients .owl-dot.active {
