@@ -86,8 +86,8 @@
               <div class="carousel-content">
                 <h2 id="introtitletext">We help you <span
                   class="txt-rotate"
-                  data-period="2000"
-                  data-rotate='[ "invest", "seek high returns", "embrace the crypto revolution. As it comes."]'></span></h2>
+                  data-period="50"
+                  data-rotate='[ "invest", "seek high returns", "embrace the crypto revolution", "<span id=\"specialtext\">as it comes</span>"]'></span></h2>
                 <p>
                     Coin Consultants is a Cryptocurrency and Initial Coin Offering (ICO) Investors Club established to help High Net Worth Investors and Funds looking to enter the high risk/high return ICO market.
                 </p>
@@ -188,7 +188,7 @@
           </div>
 
           <div class="col-lg-4 box">
-            <i><img src="./img/stuff/Token.svg"/></i>
+            <i><img src="./img/stuff/eth.svg"/></i>
             <h4 class="title">Token pre-sale and public token sale investments</h4>
           </div>
 
@@ -699,9 +699,9 @@
   },
   "retina_detect": true
 });
-window.addEventListener('load', function () {
-  Scramble.select('#introtitletext').setText('We are Coin Consultants').descramble();
-});
+//window.addEventListener('load', function () {
+//  Scramble.select('#introtitletext').setText('We are Coin Consultants').descramble();
+//});
 
 
 var TxtRotate = function(el, toRotate, period) {
@@ -732,7 +732,7 @@ TxtRotate.prototype.tick = function() {
   if (this.isDeleting) { delta /= 2; }
 
   if (!this.isDeleting && this.txt === fullTxt) {
-    delta = this.period;
+    delta = 10; //this.period;
     this.isDeleting = true;
   } else if (this.isDeleting && this.txt === '') {
     this.isDeleting = false;
@@ -742,7 +742,7 @@ TxtRotate.prototype.tick = function() {
 
   setTimeout(function() {
     that.tick();
-  }, delta);
+  }, 100);
 };
 
 window.onload = function() {
@@ -753,6 +753,7 @@ window.onload = function() {
     if (toRotate) {
       new TxtRotate(elements[i], JSON.parse(toRotate), period);
     }
+    console.log(toRotate)
   }
   // INJECT CSS
   var css = document.createElement("style");
