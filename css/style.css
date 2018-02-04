@@ -18,6 +18,9 @@ a {
   transition: 0.5s;
 }
 
+#specialtext{
+  color: red
+}
 canvas {
   display: block;
   vertical-align: bottom;
